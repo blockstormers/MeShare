@@ -10,6 +10,7 @@ import "./App.css";
 // import LeftSection from "./Components/LeftSection";
 // import LoginForm from "./Components/LoginForm";
 import Login from './Pages/Login';
+import Profile from './Pages/profile';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login/>} />
+          <Route path="/profile" element={<Profile/>} />
+          <Route path="/req" element={<req/>} />
         </Routes>
     </Router>
     </>
@@ -27,3 +30,25 @@ function App() {
 }
 
 export default App;
+
+
+// const App = () => {
+//   const [activeTab, setActiveTab] = useState("shared"); // Default tab is "Shared"
+
+//   const files = {
+//     shared: [
+//       { id: 1, name: "Shared File 1.pdf", size: "2 MB" },
+//       { id: 2, name: "Shared File 2.docx", size: "1.5 MB" },
+//     ],
+//     received: [
+//       { id: 1, name: "Received File 1.xlsx", size: "3 MB" },
+//       { id: 2, name: "Received File 2.jpg", size: "4 MB" },
+//     ],
+//   };
+
+//   return (
+    
+//   );
+// };
+
+// export default App;
