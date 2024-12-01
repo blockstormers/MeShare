@@ -11,6 +11,7 @@ import "./App.css";
 // import LoginForm from "./Components/LoginForm";
 import Login from './Pages/Login';
 import Profile from './Pages/profile';
+import HomePage from './Pages/HomePage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/login" element={<Login/>} />
           <Route path="/profile" element={<Profile/>} />
           <Route path="/req" element={<req/>} />
+          <Route path="/homepage" element={<HomePage />} />
         </Routes>
     </Router>
     </>
