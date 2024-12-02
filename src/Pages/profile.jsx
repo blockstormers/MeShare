@@ -34,7 +34,7 @@ export default function Profile() {
     alignItems: "flex-start",
     justifyContent: "center",
     width: "33.33%", // One-third of the container width
-    backgroundColor: "linear-gradient(180deg, #90caf9, #42a5f5)", // Gradient blue
+    backgroundColor: "#90caf9", // Light blue
     padding: "20px",
     borderRadius: "8px",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
@@ -58,7 +58,7 @@ export default function Profile() {
 
   const fileTabsStyle = {
     flex: 1, // Take up remaining space
-    backgroundColor: "linear-gradient(180deg, #c8e6c9, #81c784)", // Gradient green
+    backgroundColor: "#81c784", // Light green
     padding: "20px",
     borderRadius: "8px",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
@@ -75,15 +75,14 @@ export default function Profile() {
 
   return (
     <div style={containerStyle}>
-      {/* Profile Section */}
+      {/* Left Profile Section */}
       <div style={profileSectionStyle}>
         <ProfileSection />
-        {/* Example buttons for illustration */}
         <button style={buttonStyle}>Edit Profile</button>
         <button style={buttonStyle}>Settings</button>
       </div>
 
-      {/* File Tabs Section */}
+      {/* Central File Tabs Section */}
       <div style={fileTabsStyle}>
         <FileTabs
           activeTab={activeTab}
@@ -91,8 +90,24 @@ export default function Profile() {
           files={files[activeTab]}
         />
         <div>
-          <button style={tabButtonStyle}>Shared</button>
-          <button style={tabButtonStyle}>Received</button>
+          <button
+            style={{
+              ...tabButtonStyle,
+              backgroundColor: activeTab === "shared" ? "#1565c0" : "#42a5f5", // Highlight active tab
+            }}
+            onClick={() => setActiveTab("shared")}
+          >
+            Shared
+          </button>
+          <button
+            style={{
+              ...tabButtonStyle,
+              backgroundColor: activeTab === "received" ? "#1565c0" : "#42a5f5", // Highlight active tab
+            }}
+            onClick={() => setActiveTab("received")}
+          >
+            Received
+          </button>
         </div>
       </div>
     </div>
