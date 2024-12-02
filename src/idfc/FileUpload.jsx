@@ -141,12 +141,12 @@ const contractABI = [
   // Add other contract functions here as needed
 ];
 
-const contractAddress = "YOUR_CONTRACT_ADDRESS"; // Replace with your contract address
+const contractAddress = "0x1dF62f291b2E969fB0849d99D9Ce41e2F137006e"; // Replace with your contract address
 
 // Function to upload the file to IPFS
 async function uploadFileToIPFS(file) {
-  const PINATA_API_KEY = "YOUR_PINATA_API_KEY"; // Replace with your Pinata API key
-  const PINATA_SECRET_KEY = "YOUR_PINATA_SECRET_KEY"; // Replace with your Pinata secret key
+  const PINATA_API_KEY = "859feab183dc66b5f8f8"; // Replace with your Pinata API key
+  const PINATA_SECRET_KEY = "7de4175e43326265c3a144db48ee928b59529d834506078b1ddeec58f03af3f0"; // Replace with your Pinata secret key
 
   const url = `https://api.pinata.cloud/pinning/pinFileToIPFS`;
 
@@ -207,7 +207,7 @@ function storeFileMetadata(ipfsHash, fileName, fileURL, permissions) {
 export default function FileUpload() {
   const [file, setFile] = useState(null);
   const [permissions, setPermissions] = useState([
-    { userAddress: "0x1234567890abcdef", permissions: "view", grantedAt: new Date().toISOString() },
+    { userAddress: "0x1dF62f291b2E969fB0849d99D9Ce41e2F137006e", permissions: "view", grantedAt: new Date().toISOString() },
   ]);
   const [fileURL, setFileURL] = useState("");
 
