@@ -23,25 +23,54 @@ export default function Profile() {
     width: "100%",
     gap: "20px",
     padding: "20px",
-    backgroundColor: "#1e3a8a", // Blue-900 equivalent
-    color: "white",
+    backgroundColor: "#e3f2fd", // Light blue background
+    color: "black",
     height: "100vh", // Full screen height
   };
 
   const profileSectionStyle = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-start",
+    justifyContent: "center",
     width: "33.33%", // One-third of the container width
-    backgroundColor: "#1e40af", // Slightly darker blue
+    backgroundColor: "linear-gradient(180deg, #90caf9, #42a5f5)", // Gradient blue
     padding: "20px",
     borderRadius: "8px",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+    gap: "15px", // Add spacing between elements
+  };
+
+  const buttonStyle = {
+    display: "block", // Stack buttons vertically
+    width: "100%", // Full-width buttons
+    padding: "10px",
+    margin: "10px 0", // Add vertical spacing
+    backgroundColor: "#42a5f5", // Blue color
+    color: "white",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+    fontSize: "16px",
+    boxShadow: "0 2px 5px rgba(0, 0, 0, 0.2)",
+    transition: "background-color 0.3s",
   };
 
   const fileTabsStyle = {
     flex: 1, // Take up remaining space
-    backgroundColor: "#1e40af", // Slightly darker blue
+    backgroundColor: "linear-gradient(180deg, #c8e6c9, #81c784)", // Gradient green
     padding: "20px",
     borderRadius: "8px",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+    display: "flex",
+    flexDirection: "column",
+    gap: "20px", // Space between shared/received buttons
+  };
+
+  const tabButtonStyle = {
+    ...buttonStyle,
+    margin: "10px auto", // Add space between shared/received buttons
+    width: "auto", // Adjust button width
   };
 
   return (
@@ -49,6 +78,9 @@ export default function Profile() {
       {/* Profile Section */}
       <div style={profileSectionStyle}>
         <ProfileSection />
+        {/* Example buttons for illustration */}
+        <button style={buttonStyle}>Edit Profile</button>
+        <button style={buttonStyle}>Settings</button>
       </div>
 
       {/* File Tabs Section */}
@@ -58,6 +90,10 @@ export default function Profile() {
           setActiveTab={setActiveTab}
           files={files[activeTab]}
         />
+        <div>
+          <button style={tabButtonStyle}>Shared</button>
+          <button style={tabButtonStyle}>Received</button>
+        </div>
       </div>
     </div>
   );
