@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 import "./../styles/HomePage.css";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
   const [files, setFiles] = useState([]); // Public files
   const [searchQuery, setSearchQuery] = useState(""); // Search input
   const [filteredFiles, setFilteredFiles] = useState([]); // Filtered files for search
   const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
-  const [selectedFile, setSelectedFile] = useState(null); 
-  const [feedbackMessage, setFeedbackMessage] = useState("");// File for modal
+  const [selectedFile, setSelectedFile] = useState(null); // File for modal
+  const [feedbackMessage, setFeedbackMessage] = useState(""); // Feedback message
+
+  const handleNavigate = () => {
+    navigate("/profile"); // Navigate to the profile page
+  };
 
   // Fetch files from JSON
   useEffect(() => {
@@ -38,8 +44,8 @@ const HomePage = () => {
     setIsModalOpen(false);
     setSelectedFile(null);
   };
+
   const requestAccess = () => {
-    // Simulate a request being sent to the author
     const success = Math.random() > 0.5; // Simulate success or failure
     if (success) {
       setFeedbackMessage(
@@ -56,13 +62,13 @@ const HomePage = () => {
     <div className="home-page">
       {/* Left Sidebar */}
       <div className="left-sidebar">
-      <Link to="/profile"> {/* Link to navigate to profile page */}
-        <img
-          src="https://via.placeholder.com/150"
-          alt="Profile"
-          className="profile-image"
-        />
-        </Link>
+        <div onClick={handleNavigate} style={{ cursor: "pointer" }}>
+          <img
+            src="https://via.placeholder.com/150"
+            alt="Profile"
+            className="profile-image"
+          />
+        </div>
         <div className="username">Username</div>
         <div className="option">Notifications</div>
         <div className="option">Upload File</div>
