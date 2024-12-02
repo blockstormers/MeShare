@@ -50,8 +50,8 @@ function storeFileMetadata(ipfsHash, fileName, fileURL, permissions) {
 
 // Function to upload a file to IPFS using Pinata API
 async function uploadFileToIPFS(file) {
-  const PINATA_API_KEY = "your_pinata_api_key"; // Replace with your Pinata API key
-  const PINATA_SECRET_KEY = "your_pinata_secret_key"; // Replace with your Pinata secret key
+  const PINATA_API_KEY = "859feab183dc66b5f8f8"; // Replace with your Pinata API key
+  const PINATA_SECRET_KEY = "7de4175e43326265c3a144db48ee928b59529d834506078b1ddeec58f03af3f0"; // Replace with your Pinata secret key
 
   const url = `https://api.pinata.cloud/pinning/pinFileToIPFS`;
 
