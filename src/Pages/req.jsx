@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./req.css";
+// import "./req.css";
 
-const App = () => {
+const Req = () => {
   // Mock data for incoming requests
   const [requests, setRequests] = useState([
     { id: 1, name: "John Doe", status: "pending" },
@@ -63,4 +63,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Req;
