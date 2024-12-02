@@ -2,11 +2,11 @@
 
 
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+}*/
 
 body {
   font-family: Arial, sans-serif;
@@ -16,11 +16,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} 
 
-/* body {
+ /* body {
   font-family: Arial, sans-serif;
-  background-ima: url('.\src\assets\hack1.jpg') no-repeat center center fixed;
+   background-ima: url('.\src\assets\hack1.jpg') no-repeat center center fixed; 
   background-size: cover;
   color: white;
   height: 100vh;
@@ -28,9 +28,9 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0;
-} */
+}  */
 
-.container {
+ .container {
   display: flex;
   width: 80%;
   height: 80%;
@@ -75,7 +75,7 @@ LeftSection.css
 }
 /* LoginForm.css */
 
-.right-section {
+/* .right-section {
   flex: 1;
   background-color: rgba(0, 0, 0, 0.6);
   padding: 40px;
@@ -126,4 +126,161 @@ form input::placeholder {
 
 .submit-btn:hover {
   background-color: #1c86ee;
+} */ 
+
+#root{
+  width: 100%;
+}
+.App {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.App-header {
+  text-align: center;
+}
+
+.request-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.request-item {
+  margin: 10px auto;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  max-width: 400px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.accept-btn,
+.deny-btn {
+  padding: 8px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.accept-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.deny-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.status-accepted {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.status-denied {
+  color: #f4a236;
+  font-weight: bold;
+}
+
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Right Section (Login Form) */
+.right-section {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Title */
+.right-section h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Form Fields */
+form label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+form input:focus {
+  border-color: #0056b3;
+  outline: none;
+  background-color: #fff;
+}
+
+form button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: white;
+  background-color: #0056b3;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #003d80;
+}
+
+form button:active {
+  background-color: #00335e;
+}
+
+/* Error Message */
+p {
+  color: red;
+  font-size: 14px;
+  margin-top: -10px;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .right-section {
+    padding: 20px;
+  }
+
+  .right-section h2 {
+    font-size: 20px;
+  }
+
+  form input, form button {
+    font-size: 14px;
+  }
 }

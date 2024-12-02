@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "name": "Sample File 1",
+      "author": "John Doe",
+      "description": "This is a description of Sample File 1.",
+      "preview": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 2,
+      "name": "Sample File 2",
+      "author": "Jane Smith",
+      "description": "This is a description of Sample File 2.",
+      "preview": "https://via.placeholder.com/150"
+    }
+  ]
+  

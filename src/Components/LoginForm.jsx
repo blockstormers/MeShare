@@ -1,22 +1,47 @@
-import React from "react";
-// import "./App.css";
+import React, { useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+// import { aut } from "./firebase"; // Import the auth object
+import { auth } from "../Firebase/filebase";
 
 function LoginForm() {
+  const [email, setEmail] = useState(""); // Store email
+  const [password, setPassword] = useState(""); // Store password
+  const [error, setError] = useState(""); // Store error messages
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setError(""); // Clear error on new attempt
+
+    try {
+      // Attempt to sign in with Firebase
+      await signInWithEmailAndPassword(auth, email, password);
+      alert("Logged in successfully!"); // Success message
+    } catch (err) {
+      setError(err.message); // Capture any errors
+    }
+  };
+
   return (
     <div className="right-section">
       <h2>Login</h2>
-      <form>
-        <label htmlFor="name">Name</label>
-        <input type="text" id="name" placeholder="Enter your name" required />
-
+      <form onSubmit={handleLogin}>
         <label htmlFor="email">Email</label>
-        <input type="email" id="email" placeholder="Enter your email" required />
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)} // Update email state
+          required
+        />
 
         <label htmlFor="password">Password</label>
         <input
           type="password"
           id="password"
           placeholder="Enter your password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)} // Update password state
           required
         />
 
@@ -24,9 +49,11 @@ function LoginForm() {
           Submit
         </button>
       </form>
+
+      {/* Display error if login fails */}
+      {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
 }
 
 export default LoginForm;
-
