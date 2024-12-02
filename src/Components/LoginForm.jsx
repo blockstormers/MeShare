@@ -2,8 +2,15 @@ import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 // import { aut } from "./firebase"; // Import the auth object
 import { auth } from "../Firebase/filebase";
+import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
+    const navigate = useNavigate();
+    const handleNavigate = () => {
+      navigate("/homepage"); // Navigate to the profile page
+    };
+
+
   const [email, setEmail] = useState(""); // Store email
   const [password, setPassword] = useState(""); // Store password
   const [error, setError] = useState(""); // Store error messages
@@ -15,7 +22,7 @@ function LoginForm() {
     try {
       // Attempt to sign in with Firebase
       await signInWithEmailAndPassword(auth, email, password);
-      alert("Logged in successfully!"); // Success message
+     // alert("Logged in successfully!"); // Success message
     } catch (err) {
       setError(err.message); // Capture any errors
     }
@@ -45,9 +52,10 @@ function LoginForm() {
           required
         />
 
-        <button type="submit" className="submit-btn">
-          Submit
+        <button type="submit" className="submit-btn" onClick={handleNavigate}>
+          Submit 
         </button>
+
       </form>
 
       {/* Display error if login fails */}
