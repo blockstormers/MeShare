@@ -17,6 +17,7 @@ import "./App.css";
 import Req
 
 from './Pages/req';
+import FileUpload from './idfc/FileUpload';
 function App() {
   return (
     <>
@@ -29,6 +30,7 @@ function App() {
           <Route path="/homepage" element={<HomePage />} />
           <Route path="/profile" element={<Profile/>} />
           <Route path="/req" element={<Req/>} />
+          <Route path="/ipfc" element={<FileUpload/>} />
           {/* <Route path="/homepage" element={<HomePage />} /> */}
         </Routes>
     </Router>
