@@ -30,7 +30,8 @@ const Req = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <h2>Manage Requests</h2>
+        <h1  style={{ color: '#FFFFFF' }}>Manage Requests</h1>
+        <br />
         <ul className="request-list">
           {requests.map((request) => (
             <li key={request.id} className="request-item">

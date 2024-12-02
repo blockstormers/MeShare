@@ -16,6 +16,15 @@ const HomePage = () => {
     navigate("/profile"); // Navigate to the profile page
   };
 
+  const handleNavigateNotification = () => {
+    navigate("/req"); // Navigate to the profile page
+  };
+
+  const handleNavigateUploadFile = () => {
+    navigate("/ipfc"); // Navigate to the profile page
+  };
+
+
   // Fetch files from JSON
   useEffect(() => {
     fetch("/src/data/publicFiles.json")
@@ -70,8 +79,8 @@ const HomePage = () => {
           />
         </div>
         <div className="username">Username</div>
-        <div className="option">Notifications</div>
-        <div className="option">Upload File</div>
+        <div className="option" onClick={handleNavigateNotification}>Manage Requests</div>
+        <div className="option" onClick={handleNavigateUploadFile}>Upload File</div>
       </div>
 
       {/* Central Content */}

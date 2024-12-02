@@ -5,13 +5,19 @@ const Home = () => {
   const navigate = useNavigate(); // Create a navigation function
 
   const handleLoginClick = () => {
-    navigate("/profile"); // Navigate to the login page
+    navigate("/login"); // Navigate to the login page
   };
 
   return (
-    <div>
-      <h1>Welcome to the Home Page!</h1>
-      <button onClick={handleLoginClick}>Go to Login</button>
+    <div className="home-container">
+      <header className="hero-section">
+        <div className="overlay"></div>
+        <h1 className="home-title">Welcome to Your Next Adventure!</h1>
+        <p className="home-subtitle">Discover, connect, and create with ease.</p>
+        <button className="cta-button" onClick={handleLoginClick}>
+          Explore Now
+        </button>
+      </header>
     </div>
   );
 };
