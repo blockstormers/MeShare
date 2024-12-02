@@ -12,6 +12,8 @@ import "./App.css";
 import Login from './Pages/Login';
 import Profile from './Pages/profile';
 import HomePage from './Pages/HomePage';
+import RequestAccessPage from "./pages/RequestAccessPage";  // If you have a page for the request route
+import "./App.css";
 
 function App() {
   return (
@@ -23,7 +25,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login/>} />
           <Route path="/profile" element={<Profile/>} />
-          <Route path="/req" element={<req/>} />
+          <Route path="/req" element={<Req/>} />
           <Route path="/homepage" element={<HomePage />} />
         </Routes>
     </Router>
